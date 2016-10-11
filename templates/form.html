@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+
+{% block content %}
+  <img src="static/images/logo.png" class="center-block" alt="Responsive image">
+  <h3 class="text-center">MEDIA AND PUBLIC RELATIONS </h3><h3 class="support">SUPPORT REQUEST</h3></br>
+    <div class="container">
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron ">
+
+      <form action="{{url_for('index')}}" class="form-horizontal" method="POST">
+        {% for message in get_flashed_messages()%}
+            {{ message }}
+        {% endfor %}
+        {{ form.hidden_tag() }}
+        <div class="heading">
+
+
+        <div class="form-group {% if form.name.errors %} has-error {% endif %}">
+        {{form.name.label(class="col-sm-12")}}
+        <div class="col-sm-12">
+        {{form.name(placeholder="Enter your name", class="form-control")}}
+        </div>        
+        <p class="col-sm-5 help-block">
+        {{ form.name.errors[0] }}  
+        </div>
+
+            
+        <div class="form-group {% if form.surname.errors %} has-error {% endif %}">
+        {{form.surname.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.surname(placeholder="Enter your surname", class="form-control")}}
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.surname.errors[0] }}        
+        </div>
+
+
+        <div class="form-group {% if form.email.errors %} has-error {% endif %}">
+        {{form.email.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{ form.email(placeholder="Enter your email", class="form-control") }} 
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.email.errors[0] }}
+        </div>
+
+        <div class="form-group {% if form.department.errors %} has-error {% endif %}">
+        {{form.department.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.department(placeholder="Chose your department", class="form-control")}}
+        </div>        
+        <p class="col-sm-5 help-block">
+        {{ form.department.errors[0] }}        
+        </div>
+
+        <div class="form-group {% if form.title.errors %} has-error {% endif %}">
+        {{form.title.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.title(placeholder="Your answer", class="form-control")}}
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.title.errors[0] }}        
+        </div>
+
+        
+        <div class="form-group {% if form.type.errors %} has-error {% endif %}">
+        {{form.type.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.type(placeholder="workshop/ open forum / conference /event oustdie epoka / etc.", class="form-control")}}
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.type.errors[0] }}        
+        </div>
+
+        <div class="form-group {% if form.date.errors %} has-error {% endif %}">
+        {{form.date.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.date(placeholder="YYYY-dd-mm 00:00:00", class="form-control", type="date")}}
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.date.errors[0] }}        
+        </div>
+        
+
+        <div class="form-group {% if form.venue.errors %} has-error {% endif %}">
+        {{form.venue.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.venue(placeholder="Your answer", class="form-control")}}
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.venue.errors[0] }}        
+        </div>
+
+        <div class="form-group {% if form.celebrities.errors %} has-error {% endif %}">
+        {{form.celebrities.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.celebrities(placeholder="Your answer", class="form-control")}}
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.celebrities.errors[0] }}        
+        </div>
+
+        <div class="form-group {% if form.brief.errors %} has-error {% endif %}">
+        {{form.brief.label(class="col-sm-4")}}
+        <div class="col-sm-12">
+        {{form.brief(placeholder="Your answer", class="form-control")}}
+        </div>
+        <p class="col-sm-5 help-block">
+        {{ form.brief.errors[0] }}        
+        </div>
+
+        <div class="form-group {% if form.request.errors %} has-error {% endif %}">
+        <div class="col-sm-12">
+        {{ form.request.label }} {{ form.request() }}
+        </label>
+        <p class="col-sm-5 help-block">
+        {{ form.request.errors[0] }}
+        </div>
+
+
+        <div class="form-group {% if form.agree.errors %} has-error {% endif %}">
+        <label class="checkbox col-sm-12">
+        {{form.agree}} {{form.agree.label}}
+        </label>
+        <p class="col-sm-5 help-block"></p>
+        {{ form.agree.errors[0] }}
+        </div>
+
+
+        <button class="btn btn-success" type="submit">SUBMIT</button>
+</form>
+      </div>
+    </div> 
+{% endblock %}

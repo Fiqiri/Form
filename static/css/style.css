@@ -1,0 +1,41 @@
+body {
+  min-height: 1px;
+  padding-top: 30px;
+}
+h3 {
+	color: green;
+}
+.text-center {
+	color: green;
+}
+.support {
+	color: blue;
+	text-align: center;
+}
+#request {
+	list-style: none;
+}
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    position: absolute;
+    margin-top: 4px\9;
+    margin-left: 20px;
+}
+.checkbox label, .radio label {
+    margin-left: 20px;
+    font-weight: bold;
+}
+.btn-success {
+    color: #fff;
+    background-color: #1354a5;
+    border-color: #043508;
+}
+
+
+/*.multibox {
+	margin-left: -16px;
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    list-style: none;
+}
