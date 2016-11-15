@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block title %}This is an example page{% endblock %}
 
-
 {% block content %}
   <img src="static/images/logo.png" class="center-block" alt="Responsive image">
   <h3 class="text-center">MEDIA AND PUBLIC RELATIONS </h3><h3 class="support">SUPPORT REQUEST</h3></br>
@@ -35,8 +34,6 @@
         <p class="col-sm-5 help-block">
         {{ form.surname.errors[0] }}        
         </div>
-
-
         <div class="form-group {% if form.email.errors %} has-error {% endif %}">
         {{form.email.label(class="col-sm-4")}}
         <div class="col-sm-12">
